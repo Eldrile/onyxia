@@ -439,7 +439,9 @@ export const translations: Translations<"en"> = {
         "account": "My account",
         "projectSettings": "Project settings",
         "catalog": "Service catalog",
+        "catalog2": "Process catalog",
         "myServices": "My Services",
+        "myServices2": "My Processes",
         "mySecrets": "My Secrets",
         "myFiles": "My Files",
         "divider: services features": "Services features",
@@ -486,6 +488,22 @@ export const translations: Translations<"en"> = {
     "Catalog": {
         "header text1": "Service catalog",
         "header text2": "Explore, launch and configure services with just a few clicks.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                You are exploring Helm Chart Repository{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `No result found for ${forWhat}`,
+        "search results": "Search result",
+        "search": "Search"
+    },
+    "Catalog2": {
+        "header text1": "Process catalog",
+        "header text2":
+            "Explore, launch and configure computation functions with just a few clicks.",
         "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
             <>
                 You are exploring Helm Chart Repository{" "}
@@ -706,6 +724,13 @@ Feel free to explore and take charge of your Kubernetes deployments!
             "Services are supposed to be shut down as soon as you stop using them actively.",
         "running services": "Running services"
     },
+    "MyServices2": {
+        "text1": "My Processes",
+        "text2": "Access your running computation functions",
+        "text3":
+            "Processes will stop once completed, please delete them as soon as you stop monitoring them actively.",
+        "running services": "Running processes"
+    },
     "MyServicesConfirmDeleteDialog": {
         "confirm delete title": "Are you sure?",
         "confirm delete subtitle": "Make sure your service are ready to be deleted",
@@ -716,11 +741,25 @@ Feel free to explore and take charge of your Kubernetes deployments!
         "cancel": "cancel",
         "confirm": "Yes, delete"
     },
+    "MyServices2ConfirmDeleteDialog": {
+        "confirm delete title": "Are you sure?",
+        "confirm delete subtitle": "Make sure your processes are ready to be deleted",
+        "confirm delete body shared services":
+            "Be mindful that some of your ptocesses are shared with the other project member.",
+        "cancel": "cancel",
+        "confirm": "Yes, delete"
+    },
     "MyServicesButtonBar": {
         "refresh": "Refresh",
         "launch": "New service",
         "trash": "Delete all",
         "trash my own": "Delete all my services"
+    },
+    "MyServices2ButtonBar": {
+        "refresh": "Refresh",
+        "launch": "New process",
+        "trash": "Delete all",
+        "trash my own": "Delete all my processes"
     },
     "MyServicesCard": {
         "service": "Service",
@@ -730,6 +769,16 @@ Feel free to explore and take charge of your Kubernetes deployments!
         "shared by you": "Shared by you",
         "reminder to delete services": "Remember to delete your services.",
         "this is a shared service": "This service is shared among project's member"
+    },
+    "MyProcessesCard": {
+        "process": "Process",
+        "launched": "Launched: ",
+        "completed": "Completed since: ",
+        "open": "Open",
+        "readme": "readme",
+        "shared by you": "Shared by you",
+        "reminder to delete processes": "Remember to delete your processes",
+        "this is a shared process": "This process is shared among project's member"
     },
     "MyServicesRunningTime": {
         "launching": "Launching..."
@@ -758,9 +807,16 @@ Feel free to explore and take charge of your Kubernetes deployments!
     "MyServicesCards": {
         "running services": "Running services"
     },
+    "MyServices2Cards": {
+        "running services": "Running processes"
+    },
     "NoRunningService": {
         "launch one": "Click here to launch one",
         "no services running": "You don't have any service running"
+    },
+    "NoRunningService2": {
+        "launch one": "Click here to launch one",
+        "no services running": "You don't have any process running"
     },
     "DataExplorer": {
         "page header title": "Data Explorer",

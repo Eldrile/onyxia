@@ -17,6 +17,7 @@ export const createEvt = (({ evtAction, getState }) => {
         | {
               actionName: "launchCompleted";
               helmReleaseName: string;
+              catalogType: string;
           }
         | {
               actionName: "chartVersionInternallySet";
@@ -39,8 +40,13 @@ export const createEvt = (({ evtAction, getState }) => {
             action => action.actionName === "launchCompleted",
             () => {
                 const helmReleaseName = privateSelectors.helmReleaseName(getState());
+                const catalogType = privateSelectors.catalogType(getState());
                 assert(helmReleaseName !== undefined);
-                evtOut.post({ "actionName": "launchCompleted", helmReleaseName });
+                evtOut.post({
+                    "actionName": "launchCompleted",
+                    helmReleaseName,
+                    catalogType
+                });
             }
         )
         .attach(

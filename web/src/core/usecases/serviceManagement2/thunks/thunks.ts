@@ -56,7 +56,7 @@ export const thunks = {
 
             //NOTE: We do not have the catalog id nor the chart id so we search in every catalog.
             const { getLogoUrl } = await (async () => {
-                const { catalogs, chartsByCatalogId } =
+                const { catalogs2, chartsByCatalogId } =
                     await onyxiaApi.getCatalogsAndCharts();
 
                 function getLogoUrl(params: {
@@ -65,7 +65,7 @@ export const thunks = {
                 }): string | undefined {
                     const { chartName, chartVersion } = params;
 
-                    catalog: for (const { id: catalogId } of catalogs) {
+                    catalog: for (const { id: catalogId } of catalogs2) {
                         for (const chart of chartsByCatalogId[catalogId]) {
                             if (chart.name === chartName) {
                                 const iconUrl = chart.versions.find(
@@ -127,8 +127,8 @@ export const thunks = {
                     "runningServices": helmReleases
                         .filter(release => {
                             return (
-                                !release.env.catalogType ||
-                                release.env.catalogType === "Service"
+                                release.env.catalogType &&
+                                release.env.catalogType === "Process"
                             );
                         })
                         .map(

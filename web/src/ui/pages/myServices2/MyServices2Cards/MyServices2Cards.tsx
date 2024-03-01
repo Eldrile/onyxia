@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { MyServicesCard } from "../../../shared/MyServicesCard";
+import { MyProcessesCard } from "./MyProcessesCard";
 import { tss } from "tss";
 import { Text } from "onyxia-ui/Text";
 import { useTranslation } from "ui/i18n";
@@ -11,7 +11,7 @@ import { declareComponentKeys } from "i18nifty";
 import { useConst } from "powerhooks/useConst";
 import memoize from "memoizee";
 import { Evt } from "evt";
-import { NoRunningService } from "./NoRunningService";
+import { NoRunningService2 } from "./NoRunningService2";
 
 export type Props = {
     className?: string;
@@ -43,7 +43,7 @@ export type Props = {
     projectServicePassword: string;
 };
 
-export const MyServicesCards = memo((props: Props) => {
+export const MyServices2Cards = memo((props: Props) => {
     const {
         className,
         cards,
@@ -60,9 +60,9 @@ export const MyServicesCards = memo((props: Props) => {
         "isThereServicesRunning": (cards ?? []).length !== 0
     });
 
-    const { t } = useTranslation({ MyServicesCards });
+    const { t } = useTranslation({ MyServices2Cards });
 
-    const getEvtMyServicesCardAction = useConst(() =>
+    const getEvtMyProcessesCardAction = useConst(() =>
         memoize((_helmReleaseName: string) =>
             Evt.create<"SHOW POST INSTALL INSTRUCTIONS">()
         )
@@ -77,7 +77,7 @@ export const MyServicesCards = memo((props: Props) => {
                         : [action.helmReleaseName],
                 ctx,
                 helmReleaseName =>
-                    getEvtMyServicesCardAction(helmReleaseName).post(
+                    getEvtMyProcessesCardAction(helmReleaseName).post(
                         "SHOW POST INSTALL INSTRUCTIONS"
                     )
             );
@@ -109,7 +109,7 @@ export const MyServicesCards = memo((props: Props) => {
 
                     if (cards.length === 0) {
                         return (
-                            <NoRunningService
+                            <NoRunningService2
                                 className={classes.noRunningServices}
                                 catalogExplorerLink={catalogExplorerLink}
                             />
@@ -121,9 +121,9 @@ export const MyServicesCards = memo((props: Props) => {
                             getMyServicesFunctionProps(card.helmReleaseName);
 
                         return (
-                            <MyServicesCard
+                            <MyProcessesCard
                                 key={card.helmReleaseName}
-                                evtAction={getEvtMyServicesCardAction(
+                                evtAction={getEvtMyProcessesCardAction(
                                     card.helmReleaseName
                                 )}
                                 getPoseInstallInstructions={
@@ -144,11 +144,11 @@ export const MyServicesCards = memo((props: Props) => {
     );
 });
 
-export const { i18n } = declareComponentKeys<"running services">()({ MyServicesCards });
+export const { i18n } = declareComponentKeys<"running services">()({ MyServices2Cards });
 
 const useStyles = tss
     .withParams<{ isThereServicesRunning: boolean }>()
-    .withName({ MyServicesCards })
+    .withName({ MyServices2Cards })
     .create(({ theme, isThereServicesRunning }) => ({
         "root": {
             "overflow": "hidden",

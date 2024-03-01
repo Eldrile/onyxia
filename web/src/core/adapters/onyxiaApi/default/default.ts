@@ -229,15 +229,28 @@ export function createOnyxiaApi(params: {
                 );
 
                 return {
-                    "catalogs": data.catalogs.map(
-                        (apiCatalog): Catalog => ({
-                            "id": apiCatalog.id,
-                            "name": apiCatalog.name,
-                            "repositoryUrl": apiCatalog.location,
-                            "description": apiCatalog.description,
-                            "isHidden": apiCatalog.status !== "PROD"
-                        })
-                    ),
+                    "catalogs": data.catalogs
+                        .filter(apiCatalog => apiCatalog.status !== "TEST")
+                        .map(
+                            (apiCatalog): Catalog => ({
+                                "id": apiCatalog.id,
+                                "name": apiCatalog.name,
+                                "repositoryUrl": apiCatalog.location,
+                                "description": apiCatalog.description,
+                                "isHidden": apiCatalog.status !== "PROD"
+                            })
+                        ),
+                    "catalogs2": data.catalogs
+                        .filter(apiCatalog => apiCatalog.status === "TEST")
+                        .map(
+                            (apiCatalog): Catalog => ({
+                                "id": apiCatalog.id,
+                                "name": apiCatalog.name,
+                                "repositoryUrl": apiCatalog.location,
+                                "description": apiCatalog.description,
+                                "isHidden": apiCatalog.status !== "TEST"
+                            })
+                        ),
                     "chartsByCatalogId": Object.fromEntries(
                         data.catalogs.map(apiCatalog => {
                             const {

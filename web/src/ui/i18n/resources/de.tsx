@@ -444,7 +444,9 @@ export const translations: Translations<"de"> = {
         "account": "Mein Konto",
         "projectSettings": "Projekteinstellungen",
         "catalog": "Servicekatalog",
+        "catalog2": "Prozesskatalog",
         "myServices": "Meine Dienste",
+        "myServices2": "Meine Prozesse",
         "mySecrets": "Meine Geheimnisse",
         "myFiles": "Meine Dateien",
         "divider: services features": "Funktionen im Zusammenhang mit Diensten",
@@ -500,6 +502,22 @@ export const translations: Translations<"de"> = {
         "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
             <>
                 Sie erforschen das Helm Chart Repository{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Keine Ergebnisse gefunden für ${forWhat}`,
+        "search results": "Suchergebnisse",
+        "search": "Suchen"
+    },
+    "Catalog2": {
+        "header text1": "Prozesskatalog",
+        "header text2":
+            "Erkunden, starten und konfigurieren Sie Berechnungsfunktionen mit nur wenigen Klicks.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                Sie erkunden das Helm Chart Repository{" "}
                 <MuiLink href={repositoryUrl} target="_blank">
                     {catalogName}: {catalogDescription}
                 </MuiLink>
@@ -721,6 +739,13 @@ Fühlen Sie sich frei, Ihre Kubernetes-Bereitstellungen zu erkunden und die Kont
         "text2": "Starten, anzeigen und verwalten Sie schnell Ihre laufenden Dienste.",
         "text3": "Es wird empfohlen, Ihre Dienste nach jeder Arbeitssitzung zu löschen.",
         "running services": "Laufende Dienste"
+    },
+    "MyServices2": {
+        "text1": "Meine Prozesse",
+        "text2": "Zugriff auf Ihre laufenden Berechnungsfunktionen",
+        "text3":
+            "Prozesse werden gestoppt, sobald sie abgeschlossen sind. Bitte löschen Sie sie, sobald Sie aufhören, sie aktiv zu überwachen.",
+        "running services": "Laufende Prozesse"
     },
     "MyServicesConfirmDeleteDialog": {
         "confirm delete title": "Sind Sie sicher?",

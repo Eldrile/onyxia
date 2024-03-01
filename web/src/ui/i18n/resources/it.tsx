@@ -440,6 +440,7 @@ export const translations: Translations<"it"> = {
         "account": "Il mio account",
         "projectSettings": "Impostazioni del progetto",
         "catalog": "Catalogo di servizi",
+        "catalog2": "Catalogo dei process",
         "myServices": "I miei servizi",
         "mySecrets": "I miei segreti",
         "myFiles": "I miei file",
@@ -491,6 +492,22 @@ export const translations: Translations<"it"> = {
         "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
             <>
                 Stai esplorando il repository di Helm Chart{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Nessun risultato trovato per ${forWhat}`,
+        "search results": "Risultati della ricerca",
+        "search": "Cercare"
+    },
+    "Catalog2": {
+        "header text1": "Catalogo dei process",
+        "header text2":
+            "Esplora, avvia e configura le funzioni di calcolo con pochi clic.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                Stai esplorando il repository di Chart di Helm{" "}
                 <MuiLink href={repositoryUrl} target="_blank">
                     {catalogName}: {catalogDescription}
                 </MuiLink>

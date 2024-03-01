@@ -445,7 +445,9 @@ export const translations: Translations<"fr"> = {
         "account": "Mon compte",
         "projectSettings": "Paramètres du projet",
         "catalog": "Catalogue de services",
+        "catalog2": "Catalogue de process",
         "myServices": "Mes services",
+        "myServices2": "Mes Process",
         "mySecrets": "Mes secrets",
         "myFiles": "Mes fichiers",
         "divider: services features": "Fonctionnalités relative aux services",
@@ -502,6 +504,22 @@ export const translations: Translations<"fr"> = {
                 <MuiLink href={repositoryUrl} target="_blank">
                     {catalogName}: {catalogDescription}
                 </MuiLink>{" "}
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Aucun résultat trouvé pour ${forWhat}`,
+        "search results": "Résultats de la recherche",
+        "search": "Rechercher"
+    },
+    "Catalog2": {
+        "header text1": "Catalogue de process",
+        "header text2":
+            "Explorez, lancez et configurez des fonctions de calcul en quelques clics seulement.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                Vous explorez le référentiel de chartes Helm{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
             </>
         ),
         "no result found": ({ forWhat }) => `Aucun résultat trouvé pour ${forWhat}`,
@@ -723,6 +741,13 @@ N'hésitez pas à explorer et à prendre en main vos déploiements Kubernetes !
             "Il est recommandé de supprimer vos services après chaque session de travail.",
         "running services": "Services en cours"
     },
+    "MyServices2": {
+        "text1": "Mes Process",
+        "text2": "Accédez à vos fonctions de calcul en cours d'exécution",
+        "text3":
+            "Les process s'arrêteront une fois terminés. Veuillez les supprimer dès que vous cessez de les surveiller activement.",
+        "running services": "Process en cours d'exécution"
+    },
     "MyServicesConfirmDeleteDialog": {
         "confirm delete title": "Êtes-vous sûr?",
         "confirm delete subtitle":
@@ -734,11 +759,26 @@ N'hésitez pas à explorer et à prendre en main vos déploiements Kubernetes !
         "cancel": "Annuler",
         "confirm": "Oui, supprimer"
     },
+    "MyServices2ConfirmDeleteDialog": {
+        "confirm delete title": "Êtes-vous sûr?",
+        "confirm delete subtitle":
+            "Assurez-vous que vos process sont prêt à être supprimer.",
+        "confirm delete body shared services":
+            "Attention, certains de vos process sont partagés aux autres membres du projet.",
+        "cancel": "Annuler",
+        "confirm": "Oui, supprimer"
+    },
     "MyServicesButtonBar": {
         "refresh": "Rafraîchir",
         "launch": "Nouveau service",
         "trash": "Supprimer tous",
         "trash my own": "Supprimer tous mes services"
+    },
+    "MyServices2ButtonBar": {
+        "refresh": "Rafraîchir",
+        "launch": "Nouveau process",
+        "trash": "Supprimer tous",
+        "trash my own": "Supprimer tous mes process"
     },
     "MyServicesCard": {
         "service": "Service",
@@ -749,6 +789,15 @@ N'hésitez pas à explorer et à prendre en main vos déploiements Kubernetes !
         "reminder to delete services":
             "Rappelez-vous de supprimer vos services après utilisation.",
         "this is a shared service": "Ce service est partagé au sein du projet"
+    },
+    "MyProcessesCard": {
+        "process": "Process",
+        "running since": "En exécution depuis : ",
+        "open": "ouvrir",
+        "readme": "readme",
+        "shared by you": "partagé par vous",
+        "reminder to delete processes": "Rappelez-vous de supprimer vos process.",
+        "this is a shared process": "Ce process est partagé au sein du projet"
     },
     "MyServicesRunningTime": {
         "launching": "En cours..."
@@ -777,10 +826,18 @@ N'hésitez pas à explorer et à prendre en main vos déploiements Kubernetes !
     "MyServicesCards": {
         "running services": "Services en cours"
     },
+    "MyServices2Cards": {
+        "running services": "Process en cours"
+    },
     "NoRunningService": {
         "launch one": "Clickez ici pour en lancer un",
         "no services running":
             "Vous n'avez actuellement aucun service en cours d'exécution"
+    },
+    "NoRunningService2": {
+        "launch one": "Clickez ici pour en lancer un",
+        "no services running":
+            "Vous n'avez actuellement aucun process en cours d'exécution"
     },
     "DataExplorer": {
         "page header title": "Explorateur de Données",

@@ -46,6 +46,7 @@ export type ComponentKey =
     | typeof import("ui/pages/projectSettings/ProjectSettingsS3ConfigTab/TestS3ConnectionButton").i18n
     | typeof import("ui/App/Footer").i18n
     | typeof import("ui/pages/catalog/Catalog").i18n
+    | typeof import("ui/pages/catalog2/Catalog2").i18n
     | typeof import("ui/pages/catalog/CatalogChartCard").i18n
     | typeof import("ui/pages/catalog/CatalogNoSearchMatches").i18n
     | typeof import("ui/pages/launcher/Launcher").i18n
@@ -56,17 +57,23 @@ export type ComponentKey =
     | typeof import("ui/pages/launcher/LauncherDialogs/NoLongerBookmarkedDialog").i18n
     | typeof import("ui/pages/launcher/LauncherDialogs/SensitiveConfigurationDialog").i18n
     | typeof import("ui/pages/myServices/MyServices").i18n
+    | typeof import("ui/pages/myServices2/MyServices2").i18n
     | typeof import("ui/pages/myServices/MyServicesConfirmDeleteDialog").i18n
+    | typeof import("ui/pages/myServices2/MyServices2ConfirmDeleteDialog").i18n
     | typeof import("ui/pages/myServices/MyServicesButtonBar").i18n
-    | typeof import("ui/pages/myServices/MyServicesCards/MyServicesCard/MyServicesCard").i18n
-    | typeof import("ui/pages/myServices/MyServicesCards/MyServicesCard/MyServicesRunningTime").i18n
-    | typeof import("ui/pages/myServices/MyServicesCards/MyServicesCard/ReadmeAndEnvDialog/ReadmeAndEnvDialog").i18n
-    | typeof import("ui/pages/myServices/MyServicesCards/MyServicesCard/ReadmeAndEnvDialog/CopyOpenButton").i18n
+    | typeof import("ui/pages/myServices2/MyServices2ButtonBar").i18n
+    | typeof import("ui/shared/MyServicesCard/MyServicesCard").i18n
+    | typeof import("ui/shared/MyServicesCard/MyServicesRunningTime").i18n
+    | typeof import("ui/shared/MyServicesCard/ReadmeAndEnvDialog/ReadmeAndEnvDialog").i18n
+    | typeof import("ui/shared/MyServicesCard/ReadmeAndEnvDialog/CopyOpenButton").i18n
     | typeof import("ui/pages/myServices/MyServicesRestorableConfigs/MyServicesRestorableConfig/MyServicesRestorableConfigOptions").i18n
     | typeof import("ui/pages/myServices/MyServicesRestorableConfigs/MyServicesRestorableConfig").i18n
     | typeof import("ui/pages/myServices/MyServicesRestorableConfigs").i18n
     | typeof import("ui/pages/myServices/MyServicesCards").i18n
     | typeof import("ui/pages/myServices/MyServicesCards/NoRunningService").i18n
+    | typeof import("ui/pages/myServices2/MyServicesCards2").i18n
+    | typeof import("ui/pages/myServices2/MyServicesCards2/MyProcessesCard").i18n
+    | typeof import("ui/pages/myServices2/MyServices2Cards/NoRunningService2").i18n
     | typeof import("ui/pages/dataExplorer/DataExplorer").i18n
     | typeof import("ui/pages/dataExplorer/UrlInput").i18n
     | typeof import("ui/shared/CommandBar").i18n

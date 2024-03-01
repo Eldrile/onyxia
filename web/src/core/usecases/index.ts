@@ -1,4 +1,5 @@
 import * as catalog from "./catalog";
+import * as catalog2 from "./catalog2";
 import * as deploymentRegionManagement from "./deploymentRegionManagement";
 import * as fileExplorer from "./fileExplorer";
 import * as secretExplorer from "./secretExplorer";
@@ -7,6 +8,7 @@ import * as restorableConfigManagement from "./restorableConfigManagement";
 import * as s3ConfigCreation from "./s3ConfigCreation";
 import * as s3ConfigManagement from "./s3ConfigManagement";
 import * as serviceManagement from "./serviceManagement";
+import * as serviceManagement2 from "./serviceManagement2";
 import * as userAuthentication from "./userAuthentication";
 import * as userConfigs from "./userConfigs";
 import * as secretsEditor from "./secretsEditor";
@@ -19,6 +21,7 @@ import * as projectManagement from "./projectManagement";
 
 export const usecases = {
     catalog,
+    catalog2,
     deploymentRegionManagement,
     fileExplorer,
     secretExplorer,
@@ -27,6 +30,7 @@ export const usecases = {
     s3ConfigCreation,
     s3ConfigManagement,
     serviceManagement,
+    serviceManagement2,
     userAuthentication,
     userConfigs,
     secretsEditor,

@@ -407,6 +407,7 @@ export const translations: Translations<"zh-CN"> = {
         "account": "我的账号",
         "projectSettings": "项目设置",
         "catalog": "服务目录",
+        "catalog2": "流程目录",
         "myServices": "我的服务",
         "mySecrets": "我的密钥",
         "myFiles": "我的文档",
@@ -460,6 +461,21 @@ export const translations: Translations<"zh-CN"> = {
             </>
         ),
         "no result found": ({ forWhat }) => `没有找到关于 ${forWhat} 的结果`,
+        "search results": "搜索结果",
+        "search": "收索服务"
+    },
+    "Catalog2": {
+        "header text1": "流程目录",
+        "header text2": "只需点击几下，即可浏览、启动和配置计算功能。",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                您正在浏览 Helm Chart 仓库{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `未找到${forWhat}的结果`,
         "search results": "搜索结果",
         "search": "收索服务"
     },

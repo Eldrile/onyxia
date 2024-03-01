@@ -71,6 +71,17 @@ export const LeftBar = memo((props: Props) => {
                         "link": routes.myServices().link,
                         "belowDivider": t("divider: external services features")
                     },
+                    "catalog2": {
+                        "icon": customIcons.catalogSvgUrl,
+                        "label": t("catalog2"),
+                        "link": routes.catalog2().link
+                    },
+                    "myServices2": {
+                        "icon": id<MuiIconComponentName>("Book"),
+                        "label": t("myServices2"),
+                        "link": routes.myServices2().link,
+                        "belowDivider": t("divider: external services features")
+                    },
                     ...(!secretExplorer.getIsEnabled()
                         ? ({} as never)
                         : {
@@ -141,10 +152,14 @@ export const LeftBar = memo((props: Props) => {
                             return "projectSettings";
                         case "catalog":
                             return "catalog";
+                        case "catalog2":
+                            return "catalog2";
                         case "launcher":
                             return "catalog";
                         case "myServices":
                             return "myServices";
+                        case "myServices2":
+                            return "myServices2";
                         case "mySecrets":
                             return "mySecrets";
                         case "myFiles":
@@ -175,9 +190,11 @@ export const { i18n } = declareComponentKeys<
     | "account"
     | "projectSettings"
     | "catalog"
+    | "catalog2"
     | "myServices"
     | "mySecrets"
     | "myFiles"
+    | "myServices2"
     | "dataExplorer"
     | "sqlOlapShell"
     | "divider: services features"

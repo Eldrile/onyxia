@@ -83,6 +83,7 @@ export const thunks = {
                 const {
                     catalogName,
                     catalogRepositoryUrl,
+                    catalogType,
                     chartIconUrl,
                     defaultChartVersion,
                     chartVersion,
@@ -197,6 +198,7 @@ export const thunks = {
                         catalogId,
                         catalogName,
                         catalogRepositoryUrl,
+                        catalogType,
                         chartIconUrl,
                         chartName,
                         defaultChartVersion,
@@ -313,8 +315,10 @@ export const thunks = {
             const rootState = getState();
 
             const helmReleaseName = privateSelectors.helmReleaseName(rootState);
+            const catalogType = privateSelectors.catalogType(rootState);
 
             assert(helmReleaseName !== undefined);
+            assert(catalogType !== undefined);
 
             const state = rootState[name];
 
@@ -325,7 +329,10 @@ export const thunks = {
                 "catalogId": state.catalogId,
                 "chartName": state.chartName,
                 "chartVersion": state.chartVersion,
-                "values": formFieldsValueToObject(state.formFields)
+                "values": {
+                    ...formFieldsValueToObject(state.formFields),
+                    "catalogType": catalogType
+                }
             });
 
             dispatch(actions.launchCompleted());
@@ -621,10 +628,15 @@ const privateThunks = {
 
             const { catalogId, chartName, pinnedChartVersion } = params;
 
-            const { catalogs, chartsByCatalogId } =
+            const { catalogs, catalogs2, chartsByCatalogId } =
                 await onyxiaApi.getCatalogsAndCharts();
 
-            const catalog = catalogs.find(({ id }) => id === catalogId);
+            let catalog = catalogs.find(({ id }) => id === catalogId);
+            let catalogType = catalog ? "Service" : "Process";
+            if (!catalog) {
+                catalog = catalogs2.find(({ id }) => id === catalogId);
+                catalogType = catalog ? "Process" : "Service";
+            }
 
             assert(catalog !== undefined);
 
@@ -662,6 +674,7 @@ const privateThunks = {
             return {
                 "catalogName": catalog.name,
                 "catalogRepositoryUrl": catalog.repositoryUrl,
+                "catalogType": catalogType,
                 "chartIconUrl": chart.versions.find(
                     ({ version }) => version === chartVersion
                 )!.iconUrl,

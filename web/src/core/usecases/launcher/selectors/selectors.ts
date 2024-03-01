@@ -454,6 +454,13 @@ const helmReleaseName = createSelector(readyState, state => {
     return `${state.chartName}-${state.k8sRandomSubdomain}`;
 });
 
+const catalogType = createSelector(readyState, state => {
+    if (state === undefined) {
+        return undefined;
+    }
+    return state.catalogType;
+});
+
 const catalogRepositoryUrl = createSelector(readyState, state => {
     if (state === undefined) {
         return undefined;
@@ -789,5 +796,6 @@ export const privateSelectors = {
     helmReleaseName,
     formFieldsValueDifferentFromDefault,
     isShared,
+    catalogType,
     has3sConfigBeenManuallyChanged
 };

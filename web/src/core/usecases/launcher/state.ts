@@ -21,6 +21,7 @@ export declare namespace State {
         catalogId: string;
         catalogName: LocalizedString;
         catalogRepositoryUrl: string;
+        catalogType: string;
         chartName: string;
         chartVersion: string;
         // NOTE: Just for knowing if we need to display --version in the helm command bar
@@ -72,6 +73,7 @@ export const { reducer, actions } = createUsecaseActions({
                         catalogId: string;
                         catalogName: LocalizedString;
                         catalogRepositoryUrl: string;
+                        catalogType: string;
                         chartName: string;
                         chartVersion: string;
                         defaultChartVersion: string;
@@ -93,6 +95,7 @@ export const { reducer, actions } = createUsecaseActions({
                     catalogId,
                     catalogName,
                     catalogRepositoryUrl,
+                    catalogType,
                     chartName,
                     chartVersion,
                     defaultChartVersion,
@@ -115,6 +118,7 @@ export const { reducer, actions } = createUsecaseActions({
                         catalogId,
                         catalogName,
                         catalogRepositoryUrl,
+                        catalogType,
                         chartName,
                         chartVersion,
                         defaultChartVersion,

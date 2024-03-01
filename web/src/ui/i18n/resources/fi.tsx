@@ -436,8 +436,10 @@ export const translations: Translations<"fi"> = {
         "account": "Oma tili",
         "projectSettings": "Projektin asetukset",
         "catalog": "Palvelukatalogi",
+        "catalog2": "Prosessikatalogi",
         "myServices": "Omat palvelut",
         "mySecrets": "Omat salaisuudet",
+        "myServices2": "Omat prosessini",
         "myFiles": "Omat tiedostot",
         "divider: services features": "Palvelun ominaisuudet",
         "divider: external services features": "Ulkoisten palveluiden ominaisuudet",
@@ -489,6 +491,22 @@ export const translations: Translations<"fi"> = {
         "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
             <>
                 Olet tutkimassa Helm Chart Repositorya{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Tuloksia ei löytynyt haulle ${forWhat}`,
+        "search results": "Hakutulokset",
+        "search": "Haku"
+    },
+    "Catalog2": {
+        "header text1": "Prosessikatalogi",
+        "header text2":
+            "Selaa, käynnistä ja määritä laskentatoiminnot vain muutamalla napsautuksella.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                Olet tutkimassa Helm Chart Repositoryä{" "}
                 <MuiLink href={repositoryUrl} target="_blank">
                     {catalogName}: {catalogDescription}
                 </MuiLink>
@@ -705,6 +723,13 @@ Tutustu vapaasti ja ota hallintaan Kubernetes-julkaisusi!
         "text3":
             "Palveluiden odotetaan olevan sammutettuina, kun et enää käytä niitä aktiivisesti.",
         "running services": "Käynnissä olevat palvelut"
+    },
+    "MyServices2": {
+        "text1": "Omat prosessini",
+        "text2": "Pääse käynnissä oleviin laskentatoimintoihisi",
+        "text3":
+            "Prosessit pysähtyvät suoritettuaan, poista ne heti, kun et enää aktiivisesti valvo niitä.",
+        "running services": "Käynnissä olevat prosessit"
     },
     "MyServicesConfirmDeleteDialog": {
         "confirm delete title": "Oletko varma?",

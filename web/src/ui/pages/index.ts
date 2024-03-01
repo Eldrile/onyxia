@@ -1,10 +1,12 @@
 import * as account from "./account";
 import * as catalog from "./catalog";
+import * as catalog2 from "./catalog2";
 import * as launcher from "./launcher";
 import * as home from "./home";
 import * as myFiles from "./myFiles";
 import * as mySecrets from "./mySecrets";
 import * as myServices from "./myServices";
+import * as myServices2 from "./myServices2";
 import * as page404 from "./page404";
 import * as projectSettings from "./projectSettings";
 import * as terms from "./terms";
@@ -27,7 +29,9 @@ export const pages = {
     projectSettings,
     terms,
     sqlOlapShell,
-    dataExplorer
+    dataExplorer,
+    catalog2,
+    myServices2
 };
 
 export const routeDefs = {} as UnionToIntersection<

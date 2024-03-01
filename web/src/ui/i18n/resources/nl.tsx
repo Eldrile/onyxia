@@ -440,6 +440,7 @@ export const translations: Translations<"nl"> = {
         "account": "Mijn account",
         "projectSettings": "Projectinstellingen",
         "catalog": "Catalogus van de diensten",
+        "catalog2": "Procescatalogus",
         "myServices": "Mijn diensten",
         "mySecrets": "Mijn geheimen",
         "myFiles": "Mijn bestanden",
@@ -499,6 +500,22 @@ export const translations: Translations<"nl"> = {
             </>
         ),
         "no result found": ({ forWhat }) => `Geen resultaat gevonden voor ${forWhat}`,
+        "search results": "Resultaten van de zoekopdracht",
+        "search": "Zoeken"
+    },
+    "Catalog2": {
+        "header text1": "Procescatalogus",
+        "header text2":
+            "Verken, start en configureer berekeningsfuncties met slechts een paar klikken.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                U verkent de Helm Chart Repository{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Geen resultaten gevonden voor ${forWhat}`,
         "search results": "Resultaten van de zoekopdracht",
         "search": "Zoeken"
     },

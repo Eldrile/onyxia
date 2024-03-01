@@ -442,6 +442,7 @@ export const translations: Translations<"no"> = {
         "account": "Min konto",
         "projectSettings": "Prosjektinnstillinger",
         "catalog": "Tjenestekatalog",
+        "catalog2": "Prosesskatalog",
         "myServices": "Mine tjenester",
         "mySecrets": "Mine hemmeligheter",
         "myFiles": "Mine filer",
@@ -501,6 +502,22 @@ export const translations: Translations<"no"> = {
         ),
         "no result found": ({ forWhat }) => `Ingen resultater funnet for ${forWhat}`,
         "search results": "Søkeresultat",
+        "search": "Søk"
+    },
+    "Catalog2": {
+        "header text1": "Prosesskatalog",
+        "header text2":
+            "Utforsk, start og konfigurer beregningsfunksjoner med bare noen få klikk.",
+        "header help": ({ catalogName, catalogDescription, repositoryUrl }) => (
+            <>
+                Du utforsker Helm Chart Repository{" "}
+                <MuiLink href={repositoryUrl} target="_blank">
+                    {catalogName}: {catalogDescription}
+                </MuiLink>
+            </>
+        ),
+        "no result found": ({ forWhat }) => `Ingen resultater funnet for ${forWhat}`,
+        "search results": "Søkeresultater",
         "search": "Søk"
     },
     "CatalogChartCard": {

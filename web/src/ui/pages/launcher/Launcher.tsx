@@ -194,11 +194,19 @@ export default function Launcher(props: Props) {
             evtLauncher.$attach(
                 action => (action.actionName === "launchCompleted" ? [action] : null),
                 ctx,
-                ({ helmReleaseName }) => {
+                ({ helmReleaseName, catalogType }) => {
                     hideSplashScreen();
-                    routes
-                        .myServices({ "autoOpenHelmReleaseName": helmReleaseName })
-                        .push();
+                    console.log("helmReleaseName " + helmReleaseName.toString());
+                    const isProcess = catalogType === "Process";
+                    if (isProcess) {
+                        routes
+                            .myServices2({ "autoOpenHelmReleaseName": helmReleaseName })
+                            .push();
+                    } else {
+                        routes
+                            .myServices({ "autoOpenHelmReleaseName": helmReleaseName })
+                            .push();
+                    }
                 }
             );
         },
